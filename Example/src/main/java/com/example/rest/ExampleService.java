@@ -30,17 +30,9 @@ public class ExampleService {
 	@Path("/json")
 	@Produces(MediaType.APPLICATION_JSON)
 	public EmployeeModel getJson() {
-
-	 //...........db operation..
-	 //suppose we get these value from database
-	 //............
 	 String randomName = "random" + UUID.randomUUID().toString().substring(0,4);
 	 int randomAge = new Random().nextInt(100);
-
-	 //returns the value received from database
-	 return new EmployeeModel(randomName,randomAge);
-	 //return new EmployeeModel("Tom", 21);
-
+	 return new EmployeeModel(randomName,randomAge);	 
 	}
 	
 	@POST
@@ -48,10 +40,7 @@ public class ExampleService {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_XML)
 	public EmployeeModel postEmployee(EmployeeModel employee) {
-	 //We receive the object from client
-	 //Client might have send the json string as {"name":"hello","age":"24"}
-	 //do some processing ..save in database
-	 //return the output in xml format....
+	
 	 return employee;
 	}
 	
